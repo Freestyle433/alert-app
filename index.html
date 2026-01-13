@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alert App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial; padding: 20px; max-width: 500px; margin: auto; }
+    input, button { width: 100%; padding: 12px; margin: 8px 0; }
+    button { background: #4CAF50; color: white; border: none; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h2>🔐 Login</h2>
+  <input type="text" id="phone" placeholder="Phone (e.g. +1234567890)">
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="login()">Login</button>
+  <p id="message"></p>
+
+  <script>
+    function login() {
+      const phone = document.getElementById('phone').value;
+      const password = document.getElementById('password').value;
+      
+      if (
+        (phone === '+1234567890' && password === 'password123') ||
+        (phone === '+0987654321' && password === 'admin123')
+      ) {
+        document.getElementById('message').innerHTML = 
+          '<h3>✅ Success!</h3><p>You are logged in.</p>';
+      } else {
+        document.getElementById('message').innerHTML = 
+          '<p style="color:red">❌ Invalid credentials</p>';
+      }
+    }
+  </script>
+</body>
+</html>
